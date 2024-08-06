@@ -1,0 +1,17 @@
+# Fix alloca undefined with MSVC
+
+diff --git a/src/cairo-colr-glyph-render.c b/src/cairo-colr-glyph-render.c
+index 28254fd51aed424be222d67e640bd150833da4c5..a9ad84bbfade1728a0455bbf58f87d444e708fb9 100644
+--- a/src/cairo-colr-glyph-render.c
++++ b/src/cairo-colr-glyph-render.c
+@@ -43,6 +43,10 @@
+ #include <stdio.h>
+ #include <string.h>
+ 
++#ifdef _MSC_VER
++#include <malloc.h>
++#endif
++
+ #if HAVE_FT_COLR_V1
+ 
+ #include <ft2build.h>
