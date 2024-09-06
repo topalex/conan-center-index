@@ -1,0 +1,11 @@
+# Fix pixbuf-loader linking with MSVC
+
+--- a/rsvg/meson.build
++++ b/rsvg/meson.build
+@@ -251,3 +251,3 @@
+     'rsvg-2-static',
+     input: librsvg_c_lib,
+-    output: '@0@rsvg-@1@.@2@'.format(lib_prefix, librsvg_api_major, 'a'),
++    output: '@0@rsvg-@1@.@2@'.format(lib_prefix, librsvg_api_major, ext_static),
+     command: [
+       python,

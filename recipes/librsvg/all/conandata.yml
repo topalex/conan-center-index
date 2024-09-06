@@ -1,0 +1,9 @@
+sources:
+  "2.58.94":
+    url: "https://download.gnome.org/sources/librsvg/2.58/librsvg-2.58.94.tar.xz"
+    sha256: "05adf6dc58b3cfb319c2efb02b2bbdff5c75ca47cc941d48098839f20496abed"
+patches:
+  "2.58.94":
+    - patch_file: "patches/librsvg-msvc-link-fix.patch"
+      patch_type: "backport"
+      patch_description: "Fix pixbuf-loader linking with MSVC"
